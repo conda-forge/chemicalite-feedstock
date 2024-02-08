@@ -25,7 +25,7 @@ requirements:
     - rdkit ==2023.09.5
     - libboost-devel
     - eigen
-    - catch2 <3
+    - catch2
     - zlib
   run:
     - sqlite
