@@ -1,5 +1,5 @@
 {% set name = "chemicalite" %}
-{% set version = "2022.04.1" %}
+{% set version = "2024.02.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,10 @@ package:
 
 source:
   url: https://github.com/rvianello/chemicalite/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 4527329b62d28923bfd07742a1cadca137407478246b79ec0a497900fa109ba8
-  patches:
-    - boost-to-std-any.patch
+  sha256: fa254bb9a9b15b8fb4befefc28ff12225fdf99ddcf3ee0a5bd749be72283c9e7
 
 build:
-  number: 14
+  number: 0
   skip: True  # [win]
 
 requirements:
@@ -23,14 +21,14 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - sqlite <3.44.0
-    - rdkit ==2023.09.2
+    - sqlite
+    - rdkit ==2023.09.5
     - libboost-devel
     - eigen
     - catch2 <3
     - zlib
   run:
-    - sqlite <3.44.0
+    - sqlite
     - {{ pin_compatible('rdkit', max_pin='x.x.x') }}
 
 test:
