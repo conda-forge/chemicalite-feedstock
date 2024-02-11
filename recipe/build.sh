@@ -3,10 +3,8 @@ if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
   sed -i 's/ -Werror//' "$SRC_DIR/CMakeLists.txt"
 fi
 
-# workaround for old macOS sdk
-# https://conda-forge.org/docs/maintainer/knowledge_base.html#newer-c-features-with-old-sdk
-if [[ "$target_platform" == osx-64 ]]; then
-    export CXXFLAGS="$CXXFLAGS -D_LIBCPP_DISABLE_AVAILABILITY"
+if [[ "$target_platform" == osx-arm64 ]] || [[ "$target_platform" == osx-64 ]]; then
+    export CXXFLAGS="-D_LIBCPP_DISABLE_AVAILABILITY -D_HAS_AUTO_PTR_ETC=0 $CXXFLAGS"
 fi
 
 cmake ${CMAKE_ARGS} \
