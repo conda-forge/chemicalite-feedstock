@@ -1,6 +1,7 @@
 #!/bin/bash
 
-set -euxo pipefail
+#set -euxo pipefail
+set -ex
 
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
   sed -i "/INTERFACE_INCLUDE_DIRECTORIES/c\  INTERFACE_INCLUDE_DIRECTORIES \"$PREFIX/include/rdkit;$PREFIX/include\"" "$PREFIX/lib/cmake/rdkit/rdkit-targets.cmake"
