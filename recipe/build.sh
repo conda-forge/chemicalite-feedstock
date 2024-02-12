@@ -1,8 +1,5 @@
 #!/bin/bash
 
-#set -euxo pipefail
-set -ex
-
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
   sed -i "/INTERFACE_INCLUDE_DIRECTORIES/c\  INTERFACE_INCLUDE_DIRECTORIES \"$PREFIX/include/rdkit;$PREFIX/include\"" "$PREFIX/lib/cmake/rdkit/rdkit-targets.cmake"
   sed -i 's/ -Werror//' "$SRC_DIR/CMakeLists.txt"
@@ -21,8 +18,8 @@ cmake ${CMAKE_ARGS} \
 
 make
 
-#if [[ "$target_platform" != osx-arm64 ]] && [[ "$target_platform" != osx-64 ]]; then
-#    LD_LIBRARY_PATH=$PWD/src ctest --output-on-failure
-#fi
+if [[ "$target_platform" != osx-arm64 ]] && [[ "$target_platform" != osx-64 ]]; then
+    LD_LIBRARY_PATH=$PWD/src ctest --output-on-failure
+fi
 
 make install
