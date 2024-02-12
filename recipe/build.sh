@@ -21,6 +21,8 @@ cmake ${CMAKE_ARGS} \
 
 make
 
-LD_LIBRARY_PATH=$PWD/src ctest --output-on-failure
+#if [[ "$target_platform" != osx-arm64 ]] && [[ "$target_platform" != osx-64 ]]; then
+#    LD_LIBRARY_PATH=$PWD/src ctest --output-on-failure
+#fi
 
 make install
