@@ -10,7 +10,7 @@ source:
   sha256: fa254bb9a9b15b8fb4befefc28ff12225fdf99ddcf3ee0a5bd749be72283c9e7
 
 build:
-  number: 1
+  number: 2
   skip: True  # [win]
 
 requirements:
@@ -19,6 +19,7 @@ requirements:
     - make  # [unix]
     - sed  # [unix]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - sqlite
