@@ -10,7 +10,7 @@ source:
   sha256: fa254bb9a9b15b8fb4befefc28ff12225fdf99ddcf3ee0a5bd749be72283c9e7
 
 build:
-  number: 2
+  number: 3
   skip: True  # [win]
 
 requirements:
@@ -23,7 +23,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - sqlite
-    - rdkit ==2023.09.6
+    - rdkit ==2024.03.1
     - libboost-devel
     - eigen
     - catch2
