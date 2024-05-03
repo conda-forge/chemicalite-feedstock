@@ -1,5 +1,5 @@
 {% set name = "chemicalite" %}
-{% set version = "2024.02.1" %}
+{% set version = "2024.05.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/rvianello/chemicalite/archive/refs/tags/{{ version }}.tar.gz
-  sha256: fa254bb9a9b15b8fb4befefc28ff12225fdf99ddcf3ee0a5bd749be72283c9e7
+  sha256: df44ab0a2081f86692d92625efd320e0fb7d13eb9a988232be1fb6ee057c4165
 
 build:
   number: 3
