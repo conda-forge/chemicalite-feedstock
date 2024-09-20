@@ -30,7 +30,7 @@ requirements:
     - zlib
   run:
     - sqlite
-    - {{ pin_compatible('librdkit', max_pin='x.x.x') }}
+    - {{ pin_compatible('librdkit', lower_bound='2024.03.5', upper_bound='2024.03.6') }}
 
 test:
   commands:
