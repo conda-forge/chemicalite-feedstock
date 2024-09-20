@@ -21,17 +21,16 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
-    - python 3.10*
   host:
     - sqlite
-    - rdkit ==2024.03.5
+    - librdkit ==2024.03.5
     - libboost-devel
     - eigen
     - catch2
     - zlib
   run:
     - sqlite
-    - {{ pin_compatible('rdkit', max_pin='x.x.x') }}
+    - {{ pin_compatible('librdkit', max_pin='x.x.x') }}
 
 test:
   commands:
