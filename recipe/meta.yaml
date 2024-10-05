@@ -30,7 +30,7 @@ requirements:
     - zlib
   run:
     - libsqlite
-    - {{ pin_compatible('librdkit', max_pin='x.x.x') }}
+    - librdkit # pinning relies on librdkit's run_exports
 
 test:
   requires:
