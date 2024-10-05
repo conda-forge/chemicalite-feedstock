@@ -12,6 +12,8 @@ source:
 build:
   number: 4
   skip: True  # [win]
+  ignore_run_exports:
+    - librdkit
 
 requirements:
   build:
@@ -21,8 +23,6 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
-    ignore_run_exports:
-    - librdkit
   host:
     - libsqlite
     - librdkit 2024.03.5
