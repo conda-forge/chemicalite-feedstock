@@ -21,6 +21,8 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
+    ignore_run_exports:
+    - librdkit
   host:
     - libsqlite
     - librdkit 2024.03.5
@@ -30,7 +32,7 @@ requirements:
     - zlib
   run:
     - libsqlite
-    - librdkit # pinning relies on librdkit's run_exports
+    - {{ pin_compatible('librdkit', max_pin='x.x.x') }}
 
 test:
   requires:
