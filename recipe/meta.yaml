@@ -10,8 +10,10 @@ source:
   sha256: df44ab0a2081f86692d92625efd320e0fb7d13eb9a988232be1fb6ee057c4165
 
 build:
-  number: 3
+  number: 4
   skip: True  # [win]
+  ignore_run_exports:
+    - librdkit
 
 requirements:
   build:
@@ -22,17 +24,19 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
-    - sqlite
-    - rdkit ==2024.03.4
+    - libsqlite
+    - librdkit 2024.03.5
     - libboost-devel
     - eigen
     - catch2
     - zlib
   run:
-    - sqlite
-    - {{ pin_compatible('rdkit', max_pin='x.x.x') }}
+    - libsqlite
+    - {{ pin_compatible('librdkit', max_pin='x.x.x') }}
 
 test:
+  requires:
+    - sqlite
   commands:
     - echo ".load chemicalite" | sqlite3
 
