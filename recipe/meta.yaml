@@ -22,17 +22,19 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
-    - sqlite
+    - libsqlite
     - librdkit 2024.03.5
     - libboost-devel
     - eigen
     - catch2
     - zlib
   run:
-    - sqlite
+    - libsqlite
     - librdkit 2024.03.5
 
 test:
+  requires:
+    - sqlite
   commands:
     - echo ".load chemicalite" | sqlite3
 
