@@ -24,7 +24,7 @@ requirements:
   host:
     - sqlite
     - librdkit-dev ==2024.09.6
-    - libboost-devel
+    - libboost-devel  >=1.86.0,<1.87.0a0
     - eigen
     - catch2
     - zlib
