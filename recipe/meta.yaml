@@ -10,7 +10,7 @@ source:
   sha256: df44ab0a2081f86692d92625efd320e0fb7d13eb9a988232be1fb6ee057c4165
 
 build:
-  number: 3
+  number: 4
   skip: True  # [win]
 
 requirements:
@@ -23,14 +23,14 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - sqlite
-    - rdkit ==2024.03.4
-    - libboost-devel
+    - librdkit-dev ==2024.09.6
+    - libboost-devel  >=1.86.0,<1.87.0a0
     - eigen
     - catch2
     - zlib
   run:
     - sqlite
-    - {{ pin_compatible('rdkit', max_pin='x.x.x') }}
+    - {{ pin_compatible('librdkit', max_pin='x.x.x') }}
 
 test:
   commands:
