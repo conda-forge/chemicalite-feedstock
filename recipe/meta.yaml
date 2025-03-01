@@ -23,14 +23,14 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - sqlite
-    - rdkit ==2024.09.6
+    - librdkit-dev ==2024.09.6
     - libboost-devel
     - eigen
     - catch2
     - zlib
   run:
     - sqlite
-    - {{ pin_compatible('rdkit', max_pin='x.x.x') }}
+    - {{ pin_compatible('librdkit', max_pin='x.x.x') }}
 
 test:
   commands:
