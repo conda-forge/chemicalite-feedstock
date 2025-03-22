@@ -10,7 +10,7 @@ source:
   sha256: df44ab0a2081f86692d92625efd320e0fb7d13eb9a988232be1fb6ee057c4165
 
 build:
-  number: 4
+  number: 5
   skip: True  # [win]
 
 requirements:
@@ -24,7 +24,7 @@ requirements:
   host:
     - sqlite
     - librdkit-dev ==2024.09.6
-    - libboost-devel  >=1.86.0,<1.87.0a0
+    - libboost-devel
     - eigen
     - catch2
     - zlib
