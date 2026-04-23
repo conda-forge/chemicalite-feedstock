@@ -1,3 +1,6 @@
-c_stdlib_version:              # [osx and x86_64]
-  - 10.13                      # [osx and x86_64]
-
+c_compiler_version:     # [unix]
+  - 13                  # [linux]
+  - 18                  # [osx]
+cxx_compiler_version:   # [unix]
+  - 13                  # [linux]
+  - 18                  # [osx]
